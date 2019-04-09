@@ -10,4 +10,9 @@
 		android:layout_height="50dp"
 		android:text="text"/>
 
+	<ImageView
+		android:id="@+id/canvasImageView"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"/>
+
 </LinearLayout>

@@ -3096,6 +3096,9 @@ namespace App.Droid
 			// aapt resource value: 0x7F0C001C
 			public const int cancel_action = 2131492892;
 			
+			// aapt resource value: 0x7F010003
+			public const int canvasImageView = 2130771971;
+			
 			// aapt resource value: 0x7F0C001D
 			public const int center = 2131492893;
 			
@@ -3408,8 +3411,8 @@ namespace App.Droid
 			// aapt resource value: 0x7F0C006A
 			public const int shortcut = 2131492970;
 			
-			// aapt resource value: 0x7F010003
-			public const int sliding_tabs = 2130771971;
+			// aapt resource value: 0x7F010004
+			public const int sliding_tabs = 2130771972;
 			
 			// aapt resource value: 0x7F0C006B
 			public const int smallLabel = 2131492971;
@@ -3486,8 +3489,8 @@ namespace App.Droid
 			// aapt resource value: 0x7F0C0083
 			public const int title_template = 2131492995;
 			
-			// aapt resource value: 0x7F010004
-			public const int toolbar = 2130771972;
+			// aapt resource value: 0x7F010005
+			public const int toolbar = 2130771973;
 			
 			// aapt resource value: 0x7F0C0084
 			public const int top = 2131492996;
