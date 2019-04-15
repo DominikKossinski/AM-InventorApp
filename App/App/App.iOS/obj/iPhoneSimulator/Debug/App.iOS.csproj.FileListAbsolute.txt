@@ -55,3 +55,4 @@ C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App.iOS\obj\iPhoneSimul
 C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App.iOS\obj\iPhoneSimulator\Debug\App.iOS.csproj.CopyComplete
 C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App.iOS\obj\iPhoneSimulator\Debug\App.iOS.exe
 C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App.iOS\obj\iPhoneSimulator\Debug\App.iOS.pdb
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App.iOS\bin\iPhoneSimulator\Debug\App.dll.mdb

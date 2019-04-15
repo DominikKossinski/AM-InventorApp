@@ -3,13 +3,10 @@
 using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
-using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Hardware;
-using Xamarin.Forms;
 using Android.Graphics;
-using Android.Graphics.Drawables;
 
 
 namespace App.Droid

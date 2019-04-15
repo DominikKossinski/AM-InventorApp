@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Android.Hardware;
+using Android.OS;
+using Android.Runtime;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,11 +10,23 @@ namespace App
 {
     public partial class App : Application
     {
+
+        public IntPtr Handle => throw new NotImplementedException();
+
+
+        
+       
+
+        private Label myLabel;
+
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+           
+            MainPage mainPage = new MainPage();
+            myLabel = mainPage.FindByName<Label>("myLabel");
+            myLabel.Text = "dziala";
+            
         }
 
         protected override void OnStart()
@@ -27,6 +42,10 @@ namespace App
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+        public void Dispose()
+        {
+            //throw new NotImplementedException();
         }
     }
 }
