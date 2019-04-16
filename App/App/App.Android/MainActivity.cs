@@ -7,7 +7,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Hardware;
 using Android.Graphics;
-
+using static Android.Views.View;
 
 namespace App.Droid
 {
@@ -23,8 +23,11 @@ namespace App.Droid
         private static readonly object _syncLock = new object();
         private SensorManager _sensorManager;
         private TextView myTextView;
+        private Button colorButton;
+        private Button clearButton;
         private ImageView canvasImageView;
         private Bitmap bmp;
+        private Color color;
         private Canvas canvas;
         private CountDown timer;
         private bool counting = false;
@@ -87,14 +90,14 @@ namespace App.Droid
         
         public void OnAccuracyChanged(Sensor sensor, [GeneratedEnum] SensorStatus accuracy)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
         public void OnSensorChanged(SensorEvent e)
         {
             lock (_syncLock)
             {
-                myTextView.Text = string.Format("x={0:f}, y={1:f}, z={2:f}", e.Values[0], e.Values[1], e.Values[2]);
+                //myTextView.Text = string.Format("x={0:f}, y={1:f}, z={2:f}", e.Values[0], e.Values[1], e.Values[2]);
                 x -= e.Values[0];
                 y += e.Values[1];
                 if(x > 500)
@@ -152,8 +155,10 @@ namespace App.Droid
                 {
                     radius = 2;
                 }
-       
-                canvas.DrawCircle(x, y, radius, new Paint());
+
+                Paint paint = new Paint();
+                paint.Color = color;
+                canvas.DrawCircle(x, y, radius, paint);
                 canvasImageView.SetImageBitmap(bmp);
             }
         }
@@ -171,6 +176,19 @@ namespace App.Droid
             _sensorManager = (SensorManager)GetSystemService(SensorService);
             myTextView = FindViewById<TextView>(Resource.Id.myTextView);
             canvasImageView = FindViewById<ImageView>(Resource.Id.canvasImageView);
+            colorButton = FindViewById<Button>(Resource.Id.colorButton);
+            colorButton.Click += delegate
+            {
+                Random r = new Random();
+                color = new Color(r.Next() % 256, r.Next() % 256, r.Next() % 256);
+            };
+            color = new Color(200, 10, 20);
+            clearButton = FindViewById<Button>(Resource.Id.clearButton);
+            clearButton.Click += delegate
+            {
+                bmp = Bitmap.CreateBitmap(500, 500, Bitmap.Config.Argb8888);
+                canvas = new Canvas(bmp);
+            };
             bmp = Bitmap.CreateBitmap(500, 500, Bitmap.Config.Argb8888);
             canvas = new Canvas(bmp);
             

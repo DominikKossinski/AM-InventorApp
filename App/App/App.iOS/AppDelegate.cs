@@ -23,6 +23,10 @@ namespace App.iOS
         CMMotionManager manager;
         UIImageView imageView;
         UIView v;
+        UIColor color;
+        UIButton colorButton;
+        UIButton clearButton;
+        NSArray<UIView> views;
 
         bool counting = false;
         int up = 0;
@@ -50,7 +54,18 @@ namespace App.iOS
             label.Text = "Abc";
             label.TextColor = UIColor.Black;
 
+            colorButton = new UIButton(new CGRect(50, 75, 100, 25));
+            colorButton.SetTitle("Zmień Kolor", UIControlState.Normal);
+            colorButton.AddTarget(buttonEventHandler, UIControlEvent.TouchUpInside);
+            v.AddSubview(colorButton);
 
+            clearButton = new UIButton(new CGRect(175, 100, 100, 25));
+            clearButton.SetTitle("Wyczyść", UIControlState.Normal);
+            clearButton.AddTarget(buttonEventHandler, UIControlEvent.TouchUpInside);
+            v.AddSubview(clearButton);
+
+            color = new UIColor(0.7f, 0.1f, 0.2f, 1.0f);
+            views = new NSArray<UIView>();
 
             manager = new CMMotionManager();
             if (manager.AccelerometerAvailable)
@@ -68,16 +83,11 @@ namespace App.iOS
             {
                 UIView circle = new UIView(new CGRect(250, 250, 2 * radius, 2 * radius));
                 circle.Layer.BorderWidth = 1;
-                circle.BackgroundColor = UIColor.Black;
+                circle.BackgroundColor = color;
+                views.Append(circle);
                 v.AddSubview(circle);
                 label.Text = "No accelerometer";
-                /*for (int i = 0; i < 50; i++)
-                {
-                    circle = new UIView(new CGRect(50, 100 + i * 2, 2 * radius, 2 * radius));
-                    circle.Layer.BorderWidth = 1;
-                    circle.BackgroundColor = UIColor.Black;
-                    v.AddSubview(circle);
-                }*/
+                
             }
             v.AddSubview(label);
 
@@ -91,10 +101,26 @@ namespace App.iOS
             return true;
         }
 
+        public void buttonEventHandler(object sender, EventArgs e)
+        {
+            if (sender == colorButton)
+            {
+               Random r = new Random();
+                color = new UIColor((r.Next() % 256) / 255, (r.Next() % 256) / 255, (r.Next() % 256) / 255, 1);
+            } else if(sender == clearButton)
+            {
+                for(int i = 0; i < (int) views.Count; i++)
+                {
+                    views[i].RemoveFromSuperview();
+                }
+                views = new NSArray<UIView>();
+            }
+        }
+
         private void calculate(CMAccelerometerData data, NSError error)
         {
-            label.Text = string.Format("x={0:f}, y={1:f}, z={2:f}", data.Acceleration.X,
-                data.Acceleration.Y, data.Acceleration.Z);
+            ///label.Text = string.Format("x={0:f}, y={1:f}, z={2:f}", data.Acceleration.X,
+               //data.Acceleration.Y, data.Acceleration.Z);
             x -= (float)data.Acceleration.X;
             y += (float)data.Acceleration.Y;
             if (x > 500)
@@ -105,13 +131,13 @@ namespace App.iOS
             {
                 x = 0;
             }
-            if (y > 500)
+            if (y > 700)
             {
-                y = 500;
+                y = 700;
             }
-            if (y < 0)
+            if (y < 200)
             {
-                y = 0;
+                y = 200;
             }
             if (data.Acceleration.Z - 9.8 < -3)
             {
@@ -151,7 +177,8 @@ namespace App.iOS
             }
             UIView circle = new UIView(new CGRect(x, y, 2 * radius, 2 * radius));
             circle.Layer.BorderWidth = 1;
-            circle.BackgroundColor = UIColor.Black;
+            circle.BackgroundColor = color;
+            views.Append(circle);
             v.AddSubview(circle);
         }
 

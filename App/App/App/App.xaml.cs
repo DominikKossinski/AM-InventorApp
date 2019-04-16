@@ -19,6 +19,11 @@ namespace App
 
         private Label myLabel;
 
+        public Label getMyLabel()
+        {
+            return this.myLabel;
+        }
+
         public App()
         {
             InitializeComponent();

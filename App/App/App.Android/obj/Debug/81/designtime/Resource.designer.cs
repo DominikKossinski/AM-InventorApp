@@ -3096,8 +3096,8 @@ namespace App.Droid
 			// aapt resource value: 0x7F0C001C
 			public const int cancel_action = 2131492892;
 			
-			// aapt resource value: 0x7F010003
-			public const int canvasImageView = 2130771971;
+			// aapt resource value: 0x7F010005
+			public const int canvasImageView = 2130771973;
 			
 			// aapt resource value: 0x7F0C001D
 			public const int center = 2131492893;
@@ -3107,6 +3107,12 @@ namespace App.Droid
 			
 			// aapt resource value: 0x7F0C0008
 			public const int chronometer = 2131492872;
+			
+			// aapt resource value: 0x7F010002
+			public const int clearButton = 2130771970;
+			
+			// aapt resource value: 0x7F010003
+			public const int colorButton = 2130771971;
 			
 			// aapt resource value: 0x7F0C0020
 			public const int container = 2131492896;
@@ -3300,8 +3306,8 @@ namespace App.Droid
 			// aapt resource value: 0x7F0C0046
 			public const int multiply = 2131492934;
 			
-			// aapt resource value: 0x7F010002
-			public const int myTextView = 2130771970;
+			// aapt resource value: 0x7F010004
+			public const int myTextView = 2130771972;
 			
 			// aapt resource value: 0x7F0C0047
 			public const int navigation_header_container = 2131492935;
@@ -3411,8 +3417,8 @@ namespace App.Droid
 			// aapt resource value: 0x7F0C006A
 			public const int shortcut = 2131492970;
 			
-			// aapt resource value: 0x7F010004
-			public const int sliding_tabs = 2130771972;
+			// aapt resource value: 0x7F010006
+			public const int sliding_tabs = 2130771974;
 			
 			// aapt resource value: 0x7F0C006B
 			public const int smallLabel = 2131492971;
@@ -3489,8 +3495,8 @@ namespace App.Droid
 			// aapt resource value: 0x7F0C0083
 			public const int title_template = 2131492995;
 			
-			// aapt resource value: 0x7F010005
-			public const int toolbar = 2130771973;
+			// aapt resource value: 0x7F010007
+			public const int toolbar = 2130771975;
 			
 			// aapt resource value: 0x7F0C0084
 			public const int top = 2131492996;
