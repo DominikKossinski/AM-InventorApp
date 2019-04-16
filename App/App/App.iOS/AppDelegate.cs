@@ -26,7 +26,7 @@ namespace App.iOS
         UIColor color;
         UIButton colorButton;
         UIButton clearButton;
-        NSArray<UIView> views;
+        NSMutableArray<UIView> views;
 
         bool counting = false;
         int up = 0;
@@ -57,15 +57,17 @@ namespace App.iOS
             colorButton = new UIButton(new CGRect(50, 75, 100, 25));
             colorButton.SetTitle("Zmień Kolor", UIControlState.Normal);
             colorButton.AddTarget(buttonEventHandler, UIControlEvent.TouchUpInside);
+            colorButton.BackgroundColor = UIColor.Blue;
             v.AddSubview(colorButton);
 
             clearButton = new UIButton(new CGRect(175, 100, 100, 25));
             clearButton.SetTitle("Wyczyść", UIControlState.Normal);
+            clearButton.BackgroundColor = UIColor.Blue;
             clearButton.AddTarget(buttonEventHandler, UIControlEvent.TouchUpInside);
             v.AddSubview(clearButton);
 
             color = new UIColor(0.7f, 0.1f, 0.2f, 1.0f);
-            views = new NSArray<UIView>();
+            views = new NSMutableArray<UIView>();
 
             manager = new CMMotionManager();
             if (manager.AccelerometerAvailable)
@@ -84,7 +86,7 @@ namespace App.iOS
                 UIView circle = new UIView(new CGRect(250, 250, 2 * radius, 2 * radius));
                 circle.Layer.BorderWidth = 1;
                 circle.BackgroundColor = color;
-                views.Append(circle);
+                views.Add(circle);
                 v.AddSubview(circle);
                 label.Text = "No accelerometer";
                 
@@ -109,11 +111,11 @@ namespace App.iOS
                 color = new UIColor((r.Next() % 256) / 255, (r.Next() % 256) / 255, (r.Next() % 256) / 255, 1);
             } else if(sender == clearButton)
             {
-                for(int i = 0; i < (int) views.Count; i++)
+                for(nuint i = 0; i < views.Count; i++)
                 {
-                    views[i].RemoveFromSuperview();
+                    views.GetItem<UIView>(i).RemoveFromSuperview();
                 }
-                views = new NSArray<UIView>();
+                views = new NSMutableArray<UIView>();
             }
         }
 
