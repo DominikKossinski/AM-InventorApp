@@ -1,0 +1,15 @@
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\bin\Release\netstandard2.0\App.deps.json
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\bin\Release\netstandard2.0\App.dll
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\bin\Release\netstandard2.0\App.pdb
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\bin\Release\netstandard2.0\Mono.Android.dll
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\bin\Release\netstandard2.0\Mono.Android.pdb
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\bin\Release\netstandard2.0\Mono.Android.xml
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\obj\Release\netstandard2.0\App.xaml.g.cs
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\obj\Release\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\obj\Release\netstandard2.0\App.csproj.CoreCompileInputs.cache
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\obj\Release\netstandard2.0\App.AssemblyInfoInputs.cache
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\obj\Release\netstandard2.0\App.AssemblyInfo.cs
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\obj\Release\netstandard2.0\XamlC.stamp
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\obj\Release\netstandard2.0\App.csproj.CopyComplete
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\obj\Release\netstandard2.0\App.dll
+C:\Users\Dominik\Documents\GitHub\AM-InventorApp\App\App\App\obj\Release\netstandard2.0\App.pdb
